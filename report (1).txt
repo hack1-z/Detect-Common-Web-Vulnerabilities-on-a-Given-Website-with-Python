@@ -1,0 +1,23 @@
+RAPPORT DE VULNERABILITES - TESTPHP
+===================================
+
+Type : SQL Injection
+Endpoint : http://testphp.vulnweb.com/search.php?test=query
+Payload : '; DROP TABLE users; --
+Recommandation : Utiliser des requêtes paramétrées (Prepared Statements).
+--------------------
+Type : XSS
+Endpoint : http://testphp.vulnweb.com/search.php?test=query
+Payload : <script>alert('XSS')</script>
+Recommandation : Echapper les sorties HTML et mettre en place une CSP.
+--------------------
+Type : XSS
+Endpoint : http://testphp.vulnweb.com/search.php?test=query
+Payload : <img src=x onerror=alert(1)>
+Recommandation : Echapper les sorties HTML et mettre en place une CSP.
+--------------------
+Type : CSRF
+Endpoint : http://testphp.vulnweb.com/search.php?test=query
+Payload : N/A (Missing Token)
+Recommandation : Implémenter des jetons anti-CSRF et vérifier l'origine des requêtes.
+--------------------
