@@ -1,22 +1,22 @@
 # Web Vulnerability Scanner
 
-Script Python permettant de detecter automatiquement les vulnerabilites web les plus courantes sur un site cible.
+Script Python permettant de detecter automatiquement les vulnérabilites web les plus courantes sur un site cible.
 
-Developpe dans le cadre du projet **SN-AT-002 | Semaine 7** — Writing Efficient Python Code.
+Développé dans le cadre du projet **SN-AT-002 | Semaine 7** — Writing Efficient Python Code.
 
 ---
 
 ## Site cible
 
-Le script est configure pour analyser [testphp.vulnweb.com](http://testphp.vulnweb.com/), un site volontairement vulnerable cree par Acunetix pour l'entrainement a la securite. Ne jamais utiliser ce script sur un site sans autorisation explicite.
+Le script est configure pour analyser [testphp.vulnweb.com](http://testphp.vulnweb.com/), un site volontairement vulnérable créé par Acunetix pour l'entrainement à la sécurité. Ne jamais utiliser ce script sur un site sans autorisation explicite.
 
 ---
 
-## Vulnerabilites detectees
+## Vulnérabilités détectées
 
-- **SQL Injection** : injection de payloads SQL dans les champs de formulaire, detection des erreurs retournees par la base de donnees
-- **XSS (Cross-Site Scripting)** : injection de code JavaScript, verification si le payload est refleti dans la reponse sans echappement HTML
-- **CSRF (Cross-Site Request Forgery)** : detection de l'absence de token CSRF dans les formulaires POST
+- **SQL Injection** : injection de payloads SQL dans les champs de formulaire, detection des erreurs retournées par la base de données
+- **XSS (Cross-Site Scripting)** : injection de code JavaScript, verification si le payload est refleti dans la reponse sans échappement HTML
+- **CSRF (Cross-Site Request Forgery)** : détection de l'absence de token CSRF dans les formulaires POST
 
 ---
 
@@ -44,9 +44,9 @@ python final_deliverable.py
 
 Le script va :
 1. Se connecter au site cible
-2. Recuperer tous les formulaires de la page
+2. Récupérer tous les formulaires de la page
 3. Tester chaque formulaire avec les payloads d'injection
-4. Generer un fichier `report.txt` avec les vulnerabilites trouvees
+4. Générer un fichier `report.txt` avec les vulnérabilités trouvées
 
 ---
 
@@ -62,7 +62,7 @@ Le script va :
 
 ---
 
-## Exemple de rapport genere
+## Exemple de rapport généré
 
 ```
 RAPPORT DE VULNERABILITES - TESTPHP
@@ -87,16 +87,16 @@ Recommendation: Implement CSRF tokens and origin checks.
 
 ---
 
-## Bibliotheques utilisees
+## Bibliothèques utilisées
 
-| Bibliotheque | Role |
+| Bibliothèque | Rôle |
 |---|---|
-| `requests` | Envoi des requetes HTTP (GET, POST) |
+| `requests` | Envoi des requêtes HTTP (GET, POST) |
 | `BeautifulSoup` | Parsing du HTML et extraction des formulaires |
-| `urllib.parse` | Reconstruction des URLs relatives en URLs completes |
+| `urllib.parse` | Reconstruction des URLs relatives en URLs complètes |
 
 ---
 
 ## Avertissement
 
-Ce script est developpe a des fins educatives uniquement. L'utilisation de cet outil sur un site sans autorisation est illegale. Toujours tester dans un environnement controle.
+Ce script est dévéloppé à des fins éducatives uniquement. L'utilisation de cet outil sur un site sans autorisation est illegale. Toujours tester dans un environnement controlé.
